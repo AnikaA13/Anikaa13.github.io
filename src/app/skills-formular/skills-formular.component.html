@@ -1,0 +1,107 @@
+<h1>Jobsuche</h1>
+<hr />
+
+<h3>Fähigkeiten</h3>
+
+<div class="row g-4 mt-0">
+  <form class="row g-2" [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+    <div class="col-6">
+      <div class="form-floating">
+        <input
+          type="text"
+          id="fairPlayTeam"
+          name="fairPlayTeam"
+          class="form-control"
+          formControlName="team"
+          placeholder=""
+        />
+        <label for="fairPlayTeam">Dein Team</label>
+        <span
+          *ngIf="jobForm.get('team')?.invalid && jobForm.get('team')?.touched"
+          class="small text-danger"
+        >
+          Dein Team muss ausgefüllt werden
+        </span>
+      </div>
+    </div>
+    <div class="col-7">
+      <div class="form-floating">
+        <input
+          type="text"
+          id="fairPlayNomineeReason"
+          name="fairPlayNomineeReason"
+          class="form-control"
+          formControlName="nomineeReason"
+          placeholder=""
+        />
+        <label for="fairPlayNomineeReason"
+          >Wie sah die faire Handlung aus?</label
+        >
+        <span
+          *ngIf="
+            jobForm.get('nomineeReason')?.invalid &&
+            jobForm.get('nomineeReason')?.touched
+          "
+          class="small text-danger"
+        >
+          Nominierungs Grund muss ausgefüllt werden
+        </span>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="form-floating">
+        <input
+          type="text"
+          id="fairPlayNomineeTeam"
+          name="fairPlayNomineeTeam"
+          class="form-control"
+          formControlName="nomineeTeam"
+          placeholder=""
+        />
+        <label for="fairPlayNomineeTeam">Nominiertes Team</label>
+        <span
+          *ngIf="
+            jobForm.get('nomineeTeam')?.invalid &&
+            jobForm.get('nomineeTeam')?.touched
+          "
+          class="small text-danger"
+        >
+          Nominiertes Team muss ausgefüllt werden
+        </span>
+      </div>
+    </div>
+    <!-- TEMPORARY -->
+    <div class="col-5">
+      <div class="form-floating">
+        <input
+          type="text"
+          id="fairPlayTempTournament"
+          name="fairPlayTempTournament"
+          class="form-control"
+          formControlName="TempTournament"
+          placeholder=""
+        />
+        <label for="fairPlayTempTournament">Temporärs Turnier</label>
+        <span
+          *ngIf="
+            jobForm.get('TempTournament')?.invalid &&
+            jobForm.get('TempTournament')?.touched
+          "
+          class="small text-danger"
+        >
+          Turnier muss ausgefüllt werden
+        </span>
+      </div>
+    </div>
+    <!-- TEMPORARY -->
+    <div class="d-flex justify-content-start">
+      <button
+        type="submit"
+        class="btn btn-add me-2 mt-2"
+        [disabled]="jobForm.invalid"
+      >
+        Job suchen
+      </button>
+    </div>
+  </form>
+</div>
