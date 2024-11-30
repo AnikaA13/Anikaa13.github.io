@@ -13,7 +13,7 @@ export const routes: Routes = [
         component: SkillsFormularComponent
     },
     {
-        path: 'result',
+        path: 'formular/result',
         component: JobResultComponent
     }
 ];

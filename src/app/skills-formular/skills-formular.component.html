@@ -1,107 +1,81 @@
 <h1>Jobsuche</h1>
 <hr />
 
+<p>Verfügbare Jobsuchen: 1</p>
+
 <h3>Fähigkeiten</h3>
 
 <div class="row g-4 mt-0">
-  <form class="row g-2" [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+  <form class="row g-2">
     <div class="col-6">
       <div class="form-floating">
         <input
           type="text"
-          id="fairPlayTeam"
-          name="fairPlayTeam"
+          id="jobGeschicklichkeit"
+          name="jobGeschicklichkeit"
           class="form-control"
-          formControlName="team"
+          formControlName="geschicklichkeit"
           placeholder=""
         />
-        <label for="fairPlayTeam">Dein Team</label>
-        <span
-          *ngIf="jobForm.get('team')?.invalid && jobForm.get('team')?.touched"
-          class="small text-danger"
-        >
-          Dein Team muss ausgefüllt werden
-        </span>
+        <label for="jobGeschicklichkeit">Geschicklichkeit</label>
       </div>
     </div>
-    <div class="col-7">
+    <div class="col-6">
       <div class="form-floating">
         <input
           type="text"
-          id="fairPlayNomineeReason"
-          name="fairPlayNomineeReason"
+          id="jobGedächtnis"
+          name="jobGedächtnis"
           class="form-control"
-          formControlName="nomineeReason"
+          formControlName="gedächtnis"
           placeholder=""
         />
-        <label for="fairPlayNomineeReason"
-          >Wie sah die faire Handlung aus?</label
-        >
-        <span
-          *ngIf="
-            jobForm.get('nomineeReason')?.invalid &&
-            jobForm.get('nomineeReason')?.touched
-          "
-          class="small text-danger"
-        >
-          Nominierungs Grund muss ausgefüllt werden
-        </span>
+        <label for="jobGedächtnis">Gedächtnis</label>
       </div>
     </div>
-    <div class="col-5">
+    <div class="col-6">
       <div class="form-floating">
         <input
           type="text"
-          id="fairPlayNomineeTeam"
-          name="fairPlayNomineeTeam"
+          id="jobZielstrebigkeit"
+          name="jobZielstrebigkeit"
           class="form-control"
-          formControlName="nomineeTeam"
+          formControlName="zielstrebigkeit"
           placeholder=""
         />
-        <label for="fairPlayNomineeTeam">Nominiertes Team</label>
-        <span
-          *ngIf="
-            jobForm.get('nomineeTeam')?.invalid &&
-            jobForm.get('nomineeTeam')?.touched
-          "
-          class="small text-danger"
-        >
-          Nominiertes Team muss ausgefüllt werden
-        </span>
+        <label for="jobZielstrebigkeit">Zielstrebigkeit</label>
       </div>
     </div>
-    <!-- TEMPORARY -->
-    <div class="col-5">
+    <div class="col-6">
       <div class="form-floating">
         <input
           type="text"
-          id="fairPlayTempTournament"
-          name="fairPlayTempTournament"
+          id="jobIQ"
+          name="jobIQ"
           class="form-control"
-          formControlName="TempTournament"
+          formControlName="IQ"
           placeholder=""
         />
-        <label for="fairPlayTempTournament">Temporärs Turnier</label>
-        <span
-          *ngIf="
-            jobForm.get('TempTournament')?.invalid &&
-            jobForm.get('TempTournament')?.touched
-          "
-          class="small text-danger"
-        >
-          Turnier muss ausgefüllt werden
-        </span>
+        <label for="jobIQ">IQ</label>
       </div>
     </div>
-    <!-- TEMPORARY -->
-    <div class="d-flex justify-content-start">
-      <button
-        type="submit"
-        class="btn btn-add me-2 mt-2"
-        [disabled]="jobForm.invalid"
-      >
-        Job suchen
-      </button>
+    <div class="col-6">
+      <div class="form-floating">
+        <input
+          type="text"
+          id="jobKreativität"
+          name="jobKreativität"
+          class="form-control"
+          formControlName="kreativität"
+          placeholder=""
+        />
+        <label for="jobKreativität">Kreativität</label>
+      </div>
     </div>
   </form>
+  <div class="d-flex justify-content-start">
+    <button class="btn btn-secondary" [routerLink]="['result']">
+      Job suchen
+    </button>
+  </div>
 </div>
